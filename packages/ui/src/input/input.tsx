@@ -1,11 +1,10 @@
-import type { ButtonHTMLAttributes } from 'react';
+import { forwardRef, type InputHTMLAttributes } from 'react';
 import cn from 'clsx';
 
-const Button = ({
-  children,
-  className,
-  ...props
-}: ButtonHTMLAttributes<HTMLButtonElement>) => {
+const Input = forwardRef<
+  HTMLInputElement,
+  InputHTMLAttributes<HTMLInputElement>
+>(({ children, className, ...props }, ref) => {
   const rootClassName = cn(
     'relative inline-flex items-center justify-center cursor-pointer',
     'no-underline py-0 px-3.5 rounded-md border border-solid border-black',
@@ -15,10 +14,12 @@ const Button = ({
   );
 
   return (
-    <button className={rootClassName} {...props}>
+    <input ref={ref} className={rootClassName} {...props}>
       {children}
-    </button>
+    </input>
   );
-};
+});
 
-export default Button;
+Input.displayName = 'Input';
+
+export default Input;

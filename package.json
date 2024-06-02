@@ -1,6 +1,5 @@
 {
-  "repository": "https://github.com/vercel/examples.git",
-  "license": "MIT",
+  "name": "taller-challenge",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -15,7 +14,7 @@
   },
   "devDependencies": {
     "eslint": "^8.28.0",
-    "eslint-config-turbo": "latest",
+    "eslint-config-turbo": "1.13.3",
     "turbo": "^1.8.3"
   }
 }
