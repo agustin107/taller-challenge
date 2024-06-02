@@ -9,7 +9,7 @@ export const TodoList = () => {
   }
 
   return (
-    <ul className='flex flex-col gap-2'>
+    <ul className='flex flex-col gap-2' role='list'>
       {todos.map((todo) => (
         <TodoItem key={todo.id} {...todo} toggle={toggleTodo} />
       ))}
